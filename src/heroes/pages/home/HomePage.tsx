@@ -50,7 +50,7 @@ export const HomePage = () => {
 
         {/* Tabs */}
         <Tabs value={selectedTab} className="mb-8">
-          <TabsList className="grid w-full grid-cols-4">
+          <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 gap-1">
             <TabsTrigger
               value="all"
               onClick={() =>
@@ -105,21 +105,21 @@ export const HomePage = () => {
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="all">
+          <TabsContent value="all" className="mt-6">
             {/*Mostrar todos los personajes*/}
             <HeroGrid heroes={heroesResponse?.heroes ?? []} />
           </TabsContent>
           {/*Mostrar todos los personajes favoritos*/}
-          <TabsContent value="favorites">
+          <TabsContent value="favorites" className="mt-6">
             <HeroGrid heroes={favorites} />
           </TabsContent>
           {/*Mostrar todos los héroes*/}
-          <TabsContent value="heroes">
+          <TabsContent value="heroes" className="mt-6">
             <h1>Héroes</h1>
             <HeroGrid heroes={heroesResponse?.heroes ?? []} />
           </TabsContent>
           {/*Mostrar todos los villanos*/}
-          <TabsContent value="villains">
+          <TabsContent value="villains" className="mt-6">
             <h1>Villains</h1>
             <HeroGrid heroes={heroesResponse?.heroes ?? []} />
           </TabsContent>
